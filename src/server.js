@@ -31,7 +31,7 @@ const START_SERVER = () => {
 ;(async () => {
   try {
     console.log("1: Đang kết nối Database MongoDB...")
-    await CONNECT_DB
+    await CONNECT_DB()
     console.log("2: Kết nối Database thành công!")
 
     START_SERVER()
