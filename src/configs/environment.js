@@ -1,11 +1,14 @@
 import "dotenv/config"
 
 const env = {
-  MONGODB_URI: process.env.MONGODB_URI,
+  MONGODB_URL: process.env.MONGODB_URL,
   DATABASE_NAME: process.env.DATABASE_NAME,
   AUTHOR: process.env.AUTHOR,
+
   HOST: process.env.HOST,
-  POST: process.env.POST,
+  PORT: process.env.PORT,
+
+  BUILD_MODE: process.env.BUILD_MODE,
 }
 
 export default env

@@ -7,8 +7,6 @@ import errorMiddleware from "./middlewares/errorMiddleware.js"
 
 const START_SERVER = () => {
   const app = express()
-  const host = "http://localhost"
-  const port = 3000
 
   app.use(express.json())
 
@@ -19,11 +17,13 @@ const START_SERVER = () => {
   app.use(errorMiddleware)
 
   app.get("/", (req, res) => {
-    res.send("<h1>Hello World</h1>")
+    res.send("<h1 style='color: red'>Server On, Ready to Use</h1>")
   })
 
-  app.listen(port, () => {
-    console.log(`3: Xin chào ${env.AUTHOR}, server đang chạy ${host}:${port}`)
+  app.listen(env.PORT, () => {
+    console.log(
+      `3: Xin chào ${env.AUTHOR}, server đang chạy ${env.HOST}:${env.PORT}`
+    )
   })
 }
 

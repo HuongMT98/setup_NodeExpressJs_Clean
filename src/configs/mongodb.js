@@ -1,44 +1,27 @@
 import { MongoClient } from "mongodb"
-import { ServerApiVersion } from "mongodb"
 import env from "./environment.js"
-
-const MONGODB_URI = env.MONGODB_URI
-
-const DATABASE_NAME = env.DATABASE_NAME
 
 let databaseInstance = null
 
-const client = new MongoClient(MONGODB_URI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-})
-
 // Connect to the database
 const CONNECT_DB = async () => {
-  if (databaseInstance) {
-    throw new Error("Database is already connected")
-  }
-
   try {
-    if (!MONGODB_URI || typeof MONGODB_URI !== "string") {
-      throw new Error("MONGODB_URI is not defined or is not a string")
-    }
+    const client = await MongoClient.connect(env.MONGODB_URL, {
+      // useNewUrlParser: false,
+      // useUnifiedTopology: true,
+    })
+    console.log("1.1: Đã kết nối được MongoDB")
 
-    await client.connect()
-
-    databaseInstance = client.db(DATABASE_NAME)
-  } catch (err) {
-    console.error(err)
-    throw new Error("Error connecting to the database")
+    return client
+  } catch (error) {
+    console.error("1.2: Error connecting to MongoDB:", error)
+    throw error
   }
 }
 
 const GET_DB = () => {
   if (!databaseInstance) {
-    throw new Error("Database is not connected")
+    throw new Error("Database not connected")
   } else {
     return databaseInstance
   }
