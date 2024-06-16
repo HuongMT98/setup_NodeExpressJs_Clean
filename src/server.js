@@ -24,7 +24,7 @@ const START_SERVER = () => {
 
   app.listen(env.PORT, () => {
     console.log(
-      `3: Xin chào ${env.AUTHOR}, server đang chạy ${env.HOST}:${env.PORT}`
+      `3: Xin chào ${env.AUTHOR}, server đang chạy tại cổng ${env.HOST}:${env.PORT}`
     )
   })
 }

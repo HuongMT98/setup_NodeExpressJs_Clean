@@ -10,11 +10,14 @@ const CONNECT_DB = async () => {
       // useNewUrlParser: false,
       // useUnifiedTopology: true,
     })
-    console.log("1.1: Đã kết nối được MongoDB")
+    console.log("-> Message Configs MongoDB: Đã kết nối được MongoDB <-")
 
     return client
   } catch (error) {
-    console.error("1.2: Error connecting to MongoDB:", error)
+    console.error(
+      "-> Message Configs MongoDB: Kết nối bị lỗi hãy kiểm tra lại! <-",
+      error
+    )
     throw error
   }
 }
