@@ -17,7 +17,9 @@ const START_SERVER = () => {
   app.use(errorMiddleware)
 
   app.get("/", (req, res) => {
-    res.send("<h1 style='color: red'>Server On, Ready to Use</h1>")
+    res.send(
+      "<h1 style='color: red;font-size: 5rem;display: flex;justify-content: center'>Server On, Ready to Use</h1>"
+    )
   })
 
   app.listen(env.PORT, () => {
