@@ -1,3 +1,4 @@
+// File config mongodb
 import { MongoClient } from "mongodb"
 import env from "./environment.js"
 
@@ -24,7 +25,9 @@ const CONNECT_DB = async () => {
 
 const GET_DB = () => {
   if (!databaseInstance) {
-    throw new Error("Database not connected")
+    throw new Error(
+      "->Message Configs MongoDB: Database chưa được kết nối để có thể lấy dữ liệu! <-"
+    )
   } else {
     return databaseInstance
   }

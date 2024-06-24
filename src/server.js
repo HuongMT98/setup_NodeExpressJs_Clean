@@ -24,7 +24,7 @@ const START_SERVER = () => {
 
   app.listen(env.PORT, () => {
     console.log(
-      `3: Xin chào ${env.AUTHOR}, server đang chạy tại cổng ${env.HOST}:${env.PORT}`
+      `3: Xin chào ${env.AUTHOR}, server đang chạy tại cổng "${env.HOST}:${env.PORT}"`
     )
   })
 }
@@ -32,7 +32,7 @@ const START_SERVER = () => {
 //Chỉ khi kết nối database thành công thì mới start server
 ;(async () => {
   try {
-    console.log("1: Đang kết nối Database MongoDB...")
+    console.log("1: Đang kết nối với Database MongoDB...")
     await CONNECT_DB()
     console.log("2: Kết nối Database thành công!, đang chạy server...")
 

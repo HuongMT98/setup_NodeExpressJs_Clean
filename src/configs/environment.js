@@ -1,3 +1,4 @@
+/* Đây là file trung gian để setup các biến môi trường nhạy cảm trong project  */
 import "dotenv/config"
 
 const env = {

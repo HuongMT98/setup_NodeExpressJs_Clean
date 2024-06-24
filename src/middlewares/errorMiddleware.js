@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* File chứa các middleware dùng để xử lý lỗi tập trung */
 import { StatusCodes } from "http-status-codes"
 import env from "../configs/environment.js"
 

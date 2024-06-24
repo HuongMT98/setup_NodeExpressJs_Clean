@@ -1,6 +1,6 @@
 # Setup-Nodejs-Server
 
-npm install mongodb http-status-codes express esm body-parser dotenv nodemon joi cross-env
+npm install mongodb http-status-codes express esm body-parser dotenv nodemon joi cross-env cors mongoose
 
 Kết nỗi database mongodb để fix lỗi trong .env
 

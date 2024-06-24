@@ -1,3 +1,6 @@
+/* Đây là Slug có thể dùng làm title của trang web hoặc dùng làm SEO cho trang
+web nếu cần */
+
 function slugify(str) {
   return String(str)
     .normalize("NFKD") // split accented characters into their base characters and diacritical marks
